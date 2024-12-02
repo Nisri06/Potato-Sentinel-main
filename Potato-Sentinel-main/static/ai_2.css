@@ -1,0 +1,516 @@
+/* Header styles */
+.header {
+    position: sticky; /* Change from fixed to sticky */
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    justify-content: center; 
+    padding: 20px 10px; /* Adjust the padding as needed */
+    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+    z-index: 1000;
+    height: 100px;
+    color: #000000;
+    font-family: 'Montserrat', sans-serif; /* Use the same font as the body */
+    font-weight: 600; /* Adjust font weight as needed */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    max-width: 80px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.logo-text p {
+    font-family: "Georgia", serif;
+    font-size: 24px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.logo-text .large-number {
+    font-family: "Times New Roman", serif;
+    font-size: 23px;
+}
+
+.custom-heading {
+    text-align: center;
+    background-color: #F3F6FC;
+    color: #000000;
+    font-family: 'San Francisco', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative; /* Add this to create a stacking context */
+    font-family: "Google Sans", "Helvetica Neue", sans-serif;
+
+}
+
+.custom-heading h1 {
+    display: flex;
+    align-items: center;
+}
+
+.custom-heading span {
+    margin-right: 0px; /* Adjust this margin as needed to separate text and image */
+}
+
+.custom-heading h1 span {
+    position: relative;
+}
+
+.custom-heading h1 span::after {
+    content: "Hybrid Intelligence as healthier crops";
+    display: block;
+    position: absolute;
+    bottom: -25px; /* Adjust the distance from the text as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #616161;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    transition-delay: 0.15s;
+}
+
+.custom-heading h1 span:hover::after {
+    opacity: 1;
+}
+
+.custom-heading, .header {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.image {
+    width: 55px;
+    height: 55px;
+    animation: rotate 5s linear infinite;
+}
+
+/* Hide the checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Styling for the menu button */
+.menu-button {
+    position: absolute;
+    top: 38px; /* Adjust the top distance as needed */
+    left: 30px; /* Adjust the left distance as needed */
+    cursor: pointer;
+    z-index: 2; /* Ensure it appears above other elements */
+    width: 25px; /* Adjust the width of the button */
+    height: 15px; /* Adjust the height of the button */
+    background-color: #f3f6fc; /* Background color of the button */
+    border-radius: 50%; /* Apply rounded corners */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space evenly between bars */
+    padding: 5px; /* Adjust padding to control the gap between bars */
+    transition: background-color 0.3s ease; /* Add a transition for background color */
+}
+
+.menu-button .bar {
+    background-color: #020202; /* Change the color of the bars to #020202 */
+    height: 3px; /* Increase the height of the bars for thicker bars */
+    width: 100%; /* Make the bars span the full width of the button */
+    border-radius: 2px; /* Apply rounded corners to the bars */
+    margin: 0; /* Remove the margin to prevent overlap */
+}
+
+
+.menu-button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(97, 97, 97, 0.5); /* Background color when hovering */
+    border-radius: 50%; /* Makes it round */
+    width: 40px; /* Adjust the width to control the size */
+    height: 40px; /* Adjust the height to control the size */
+    z-index: -1; /* Place it behind the menu icon */
+    transition: opacity 0.3s ease; /* Add a smooth transition for opacity */
+    opacity: 0; /* Initially hidden */
+}
+
+/* Hover effect for the menu button */
+.menu-button:hover::before {
+    opacity: 1; /* Show the circle on hover */
+}
+
+/* Hover effect for the menu button */
+.menu-button::after {
+    content: "Main menu"; /* The text you want to display */
+    display: block;
+    position: absolute;
+    top: calc(50% - 10px); /* Position it vertically centered */
+    left: calc(100% + 10px); /* Position it to the right of the button */
+    background-color: #616161;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px; /* Adjust the font size as needed */
+    white-space: nowrap; /* Prevent text from wrapping */
+    opacity: 0; /* Show the label on hover */
+    pointer-events: none;
+    transition: opacity 0.3s ease; /* Add a smooth transition for opacity */
+    transition-delay: 0.15s;
+}
+
+.menu-button:hover::after {
+    opacity: 1;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.menu-button.open .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-button.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-button.open .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px; /* Adjust the positioning as needed */
+    left: 200px; /* Adjust the positioning as needed */
+    background-color: #F8FAFD;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 998;
+    max-height: 300px;
+    overflow-y: auto;
+    width: 300px;
+    padding: 5px;
+    position: absolute;
+    top: 80%; /* Adjust the vertical distance from the button */
+    transform: translateX(-50%);
+
+    margin: 0;
+
+    /* Outer border with E9EEF6 */
+    border: 10px solid #E9EEF6;
+    border-radius: 20px; /* Adjust the total border radius as needed */   
+}
+
+.dropdown-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+}
+
+/* Style for the dropdown menu items with rounded edges */
+.dropdown-menu ul li {
+    position: relative;
+    padding: 10px;
+    transition: background-color 0.3s ease; /* Add a smooth transition for background color */
+    border-radius: 5px; /* Add rounded edges to the menu items */
+    display: inline-block;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Center the text horizontally */
+     /* Add these new styles */
+    width: calc(50% - 10px); /* Set each item to occupy 50% of the container (two items in a row) */
+    box-sizing: border-box; /* Include padding and borders in the width */
+    text-align: center; /* Center the text horizontally */
+}
+
+.dropdown-menu ul li img {
+    display: block; /* Ensure the image is treated as a block element */
+    margin: 10px auto; /* Center the image horizontally */
+}
+
+/* Hover effect for the dropdown menu items */
+.dropdown-menu ul li:hover {
+    background-color: rgba(97, 97, 97, 0.5); /* Change the background color when hovering */
+}
+
+
+
+/* Add this CSS to your existing stylesheet */
+.dropdown-menu a {
+    color: black; /* Change the text color to black */
+    text-decoration: none; /* Remove underlines */
+}
+
+/* Show the dropdown when the menu button is clicked */
+#menu-toggle:checked + .custom-heading .dropdown-menu {
+    display: block;
+}
+
+/* Change the scrollbar width for the dropdown menu */
+.dropdown-menu::-webkit-scrollbar {
+    width: 10px; /* Adjust the width as desired */
+}
+
+/* Track (the background of the scrollbar) */
+.dropdown-menu::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Change to your preferred background color */
+}
+
+/* Handle (the draggable part of the scrollbar) */
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background: #888; /* Change to your preferred scrollbar color */
+    border-radius: 5px; /* Adjust the border radius as desired */
+    right: -10px; /* Move the scrollbar to the right edge to overlap with the content */
+}
+
+/* Home Icon */
+.home-icon {
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, border-radius 0.3s ease;
+    z-index: 1; /* Increase the z-index to make it higher than ::before */
+}
+
+/* Modify the CSS for the anchor element */
+.home-button {
+    position: absolute;
+    top: 30px;
+    right: 15px;
+    text-decoration: none;
+    z-index: 1; /* Ensure the anchor is behind the home icon */
+}
+
+/* Lower the z-index for ::before to make it go behind the icon */
+.home-icon-container::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(97, 97, 97, 0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    z-index: -1; /* Lower the z-index further */
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+/* Hover effect for the menu button */
+.home-icon-container:hover::before {
+    opacity: 1;
+}
+
+/* Text Label on Hover */
+.home-icon-container::after {
+    content: "Home";
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #616161;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.home-icon-container:hover::after {
+    opacity: 1;
+}
+
+/* Style for the computer information container */
+.content {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 5px auto 20px auto;
+    width: 70%;
+    color: black;
+    padding-left: 20px;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    letter-spacing: normal;
+    line-height: 1.375rem;
+    font-family: "Google Sans", "Helvetica Neue", sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Style for list items */
+.content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Style for list item labels */
+.content li strong {
+    font-weight: bold;
+    margin-right: 10px; /* Add spacing between label and value */
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 80px;
+}
+
+.content li strong img.icon {
+    width: 32px; /* Set the width of the icon */
+    height: 32px; /* Set the height of the icon */
+    margin-right: 10px; /* Add spacing between the icon and the label */
+    vertical-align: middle; /* Vertically align the icon with the label */
+}
+
+/* Style for list item values */
+.content li span {
+    display: inline-block;
+    margin-top: 5px;
+    font-weight: normal;
+    
+}
+
+.content ul li {
+    margin-bottom: 10px; /* Add margin to create vertical spacing */
+}
+
+.section-heading {
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+.section-paragraph {
+    margin-top: 0; /* Optional: Adjust or add if needed */
+}
+
+
+/* Reset some default browser styles */
+body,
+h1,
+h2,
+p,
+table {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-smooth: always; /* Enable font smoothing */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    background-color: #F3F6FC;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+    /* Decrease line height */
+    line-height: 1; /* You can adjust this value as needed */
+    text-rendering: optimizeLegibility;
+}
+
+
+
+/* Add media query for smaller screens */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 10px; /* Reduce padding for smaller screens */
+    }
+
+    .folder-section {
+        padding: 20px 10px; /* Reduce padding for smaller screens */
+    }
+
+    .footer-text {
+        font-size: 12px; /* Reduce font size for smaller screens */
+    }
+}
+
+/* Add smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hide the default scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track (the background of the scrollbar) */
+::-webkit-scrollbar-track {
+    background: #FFFFFF; /* Change to the desired light color (#F3F6FC) */
+}
+
+/* Handle (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+    background: #80868B; /* Change to the desired white color (#FFFFFF) */
+    border-radius: 6px; /* Adjust the border-radius to control the curvature */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #80868B; /* Change to the desired white color (#FFFFFF) on hover */
+}
+
+/* Footer styles */
+.footer {
+    background-color: #FFFFFF;
+    color: black;
+    text-align: right;
+    padding: 5px 20px;
+    flex-shrink: 0;
+    margin-top: auto;
+    font-family: 'Montserrat', sans-serif; /* Use the same font as the body */
+    font-weight: 600; /* Adjust font weight as needed */
+    line-height: 1;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/ai.css">
+    <title>Potato Sentinel</title>
+    <link rel="icon" type="image/x-icon" href="../static/favicon32.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/favicon32.ico">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="../static/images/logo.png" alt="Logo" class="logo" draggable="false">
+            <div class="logo-text">
+                <p><strong> Potato Sentinel: Hybrid Intelligence for Healthier Crops
+                </strong></p>
+            </div>
+        </div>
+    </header>
+    
+       
+    <div class="custom-heading">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-button">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </label>
+        <a href="/home" class="home-button">
+            <span class="home-icon-container">
+                <img src="../static/images/home.png" alt="Home" class="home" draggable="false" width="32" height="32">
+            </span>
+        </a>
+        <h1>
+            <span>Potato Sentinel </span>
+            <img src="../static/images/img.png" alt="Image" class="image" draggable="false" width="55" height="55" style="margin-left: 10px;">
+        </h1>
+        <nav class="dropdown-menu">
+            <ul>
+                <li>
+                    <a href="/about">
+                        <strong>
+                            <img src="../static/images/about.png" alt="About Icon" class="icon" width="32" height="32" draggable="false">
+                            About us
+                        </strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="/faq">
+                        <strong>
+                            <img src="../static/images/faq.png" alt="FAQ Icon" class="icon" width="32" height="32" draggable="false">
+                            FAQ
+                        </strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="/tnc">
+                        <strong>
+                            <img src="../static/images/tnc.png" alt="TNC Icon" class="icon" width="32" height="32" draggable="false">
+                            Terms of Service
+                        </strong>
+                    </a>
+                </li>              
+            </ul>
+        </nav>
+    </div>   
+
+    <div class="content">
+        <div class="upload-container">
+            <h2 class="page-heading">Analyze Your Potato Leaf Image</h2>
+            <p class="page-description">Upload a clear image of your potato leaf to receive a detailed diagnosis using our advanced hybrid model. Our system will analyze the image and provide insights into potential diseases and recommended treatments.</p>        
+            
+            <div class="upload-section">
+                <form id="upload-form" method="POST" enctype="multipart/form-data" action="/upload">
+                    <label for="file-upload" class="upload-label">
+                        <div class="upload-icon">
+                            <img src="../static/images/upload-icon.png" alt="Upload Icon">
+                        </div>
+                        <span>Click or drag to upload your image</span>
+                    </label>
+                    <input type="file" id="file-upload" name="file" class="file-upload" accept="image/*">
+                </form>
+            </div>
+        </div>
+        
+    </div>
+    
+    
+   
+    <footer class="footer">
+        <p class="footer-text"><strong>© Developed by Hari, Karthik and Nithya<strong></p>
+    </footer>
+
+    <script src="../static/ai.js"></script>
+    <script>
+        document.getElementById('file-upload').addEventListener('change', function() {
+            document.getElementById('upload-form').submit();
+        });
+    </script>
+
+</body>
+</html>

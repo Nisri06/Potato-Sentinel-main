@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/result.css">
+    <title>Potato Sentinel</title>
+    <link rel="icon" type="image/x-icon" href="../static/favicon32.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/favicon32.ico">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="../static/images/logo.png" alt="Logo" class="logo" draggable="false">
+            <div class="logo-text">
+                <p><strong> Potato Sentinel: Hybrid Intelligence for Healthier Crops
+                </strong></p>
+            </div>
+        </div>
+    </header>
+    
+       
+    <div class="custom-heading">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-button">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </label>
+        <a href="/home" class="home-button">
+            <span class="home-icon-container">
+                <img src="../static/images/home.png" alt="Home" class="home" draggable="false" width="32" height="32">
+            </span>
+        </a>
+        <h1>
+            <span>Potato Sentinel </span>
+            <img src="../static/images/img.png" alt="Image" class="image" draggable="false" width="55" height="55" style="margin-left: 10px;">
+        </h1>
+        <nav class="dropdown-menu">
+            <ul>
+                <li>
+                    <a href="/about">
+                        <strong>
+                            <img src="../static/images/about.png" alt="About Icon" class="icon" width="32" height="32" draggable="false">
+                            About us
+                        </strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="/faq">
+                        <strong>
+                            <img src="../static/images/faq.png" alt="FAQ Icon" class="icon" width="32" height="32" draggable="false">
+                            FAQ
+                        </strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="/tnc">
+                        <strong>
+                            <img src="../static/images/tnc.png" alt="TNC Icon" class="icon" width="32" height="32" draggable="false">
+                            Terms of Service
+                        </strong>
+                    </a>
+                </li>              
+            </ul>
+        </nav>
+    </div>   
+
+    <div class="content">
+        <h2 class="page-heading">Analysis Result</h2>
+        
+        <div class="result-image">
+            <h3>Uploaded Image</h3>
+            <img src="{{ image_url }}" alt="Uploaded Potato Leaf" class="uploaded-image">
+        </div>
+
+        <h3>Predicted Disease: {{ friendly_class_name }}</h3>
+
+        
+        <h3>Description:</h3>
+        <p class="disease-description">{{ description }}</p>
+
+        <a href="/ai" class="back-button">Upload Another Image</a>
+    </div>
+    
+    
+   
+    <footer class="footer">
+        <p class="footer-text"><strong>© Developed by Hari, Karthik and Nithya<strong></p>
+    </footer>
+
+    <script src="../static/result.js"></script>
+
+</body>
+</html>
